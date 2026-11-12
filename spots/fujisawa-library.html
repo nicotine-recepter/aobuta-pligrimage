@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0088CC">
+  <meta name="description" content="藤澤市立圖書館聖地巡禮資訊：青春豬頭少年第 1 集場景、交通指引、拍照建議與參訪提醒。">
+  <title>藤澤市立圖書館｜青春豬頭少年・湘南聖地巡禮</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --sky: #0088CC;
+      --sky-dark: #006da6;
+      --sky-soft: #e8f6fc;
+      --ink: #183746;
+      --muted: #627985;
+      --sand: #fffaf0;
+      --white: #fff;
+      --line: #dcebf1;
+      --shadow: 0 14px 38px rgba(17, 86, 116, .10);
+      --radius: 22px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; color: var(--ink); background: #fbfeff;
+      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      line-height: 1.75;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1000px, calc(100% - 42px)); margin-inline: auto; }
+    .topbar {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(255,255,255,.91); backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(220,235,241,.85);
+    }
+    .nav { min-height: 68px; display: flex; justify-content: space-between; align-items: center; gap: 18px; }
+    .brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: .03em; }
+    .brand-mark { width: 34px; height: 34px; display: grid; place-items: center; color: white; background: var(--sky); border-radius: 50%; }
+    .back-link { color: var(--sky-dark); font-size: .9rem; font-weight: 700; }
+    .back-link:hover { text-decoration: underline; }
+    .hero {
+      position: relative; overflow: hidden; isolation: isolate;
+      padding: 76px 0 72px;
+      background: linear-gradient(120deg, #e1f5fc 0%, #f4fbff 55%, #fffaf0 100%);
+    }
+    .hero::after {
+      content: ""; position: absolute; z-index: -1; width: 380px; height: 380px;
+      right: -90px; top: -150px; border: 1px solid rgba(0,136,204,.18);
+      border-radius: 50%; box-shadow: 0 0 0 35px rgba(0,136,204,.035), 0 0 0 75px rgba(0,136,204,.025);
+    }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: var(--sky-dark); font-size: .78rem; font-weight: 800; letter-spacing: .14em; }
+    .eyebrow::before { content: ""; width: 25px; height: 2px; background: currentColor; }
+    .region-tag { display: inline-block; margin-left: 9px; padding: 4px 11px; color: var(--sky-dark); background: white; border: 1px solid #cce9f4; border-radius: 999px; font-size: .72rem; letter-spacing: 0; }
+    h1 { max-width: 760px; margin: 18px 0 13px; font-size: clamp(2.2rem, 5.4vw, 3.8rem); line-height: 1.22; letter-spacing: -.045em; }
+    h1 span { display: block; margin-top: 8px; color: var(--sky); font-size: .48em; letter-spacing: .02em; font-weight: 600; }
+    .hero-intro { max-width: 700px; margin: 0; color: #526f7d; font-size: 1rem; }
+    .content { padding: 62px 0 82px; }
+    .layout { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(250px, .8fr); gap: 24px; align-items: start; }
+    .main-column { display: grid; gap: 22px; }
+    .panel { padding: 27px; background: white; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 8px 25px rgba(17,86,116,.045); }
+    .panel h2 { margin: 0 0 16px; font-size: 1.35rem; letter-spacing: -.025em; }
+    .panel h2::before { content: ""; display: inline-block; width: 5px; height: 20px; margin-right: 10px; vertical-align: -3px; background: var(--sky); border-radius: 5px; }
+    .panel p { margin: 0; color: var(--muted); font-size: .93rem; }
+    .episode-box { display: flex; gap: 17px; align-items: flex-start; padding: 18px; background: var(--sky-soft); border-radius: 16px; }
+    .episode-number { flex: 0 0 54px; width: 54px; height: 54px; display: grid; place-items: center; color: white; background: var(--sky); border-radius: 15px; font-weight: 800; }
+    .episode-box strong { display: block; margin-bottom: 4px; }
+    .episode-box p { color: #587582; font-size: .88rem; }
+    .info-list { display: grid; gap: 15px; }
+    .info-row { display: grid; grid-template-columns: 92px 1fr; gap: 12px; padding-bottom: 14px; border-bottom: 1px solid #edf3f5; }
+    .info-row:last-child { padding-bottom: 0; border-bottom: 0; }
+    .info-label { color: var(--sky-dark); font-size: .83rem; font-weight: 800; }
+    .info-value { color: #536f7c; font-size: .9rem; }
+    .map-link { display: inline-flex; margin-top: 17px; padding: 10px 15px; color: white; background: var(--sky); border-radius: 999px; font-size: .84rem; font-weight: 700; transition: .2s; }
+    .map-link:hover { background: var(--sky-dark); transform: translateY(-2px); }
+    .side-column { display: grid; gap: 22px; }
+    .side-card { overflow: hidden; background: white; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 8px 25px rgba(17,86,116,.045); }
+    .illustration { min-height: 190px; display: grid; place-items: center; position: relative; overflow: hidden; background: linear-gradient(145deg, #dff3fa, #fff8e9); }
+    .illustration::before, .illustration::after { content: ""; position: absolute; width: 190px; height: 190px; border: 1px solid rgba(0,136,204,.2); border-radius: 50%; }
+    .illustration::after { width: 260px; height: 260px; }
+    .illustration-icon { position: relative; z-index: 1; font-size: 4rem; filter: drop-shadow(0 8px 10px rgba(0,80,120,.12)); }
+    .side-copy { padding: 21px; }
+    .side-copy h3 { margin: 0 0 8px; font-size: 1.05rem; }
+    .side-copy p { margin: 0; color: var(--muted); font-size: .84rem; }
+    .reminder { padding: 20px; color: #5a7480; background: var(--sand); border: 1px solid #f1e8d4; border-radius: 17px; font-size: .85rem; }
+    .reminder strong { display: block; margin-bottom: 7px; color: #8a6b2d; }
+    .footer { padding: 28px 0; color: #78909b; background: #f1f9fc; font-size: .8rem; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    @media (max-width: 760px) {
+      .layout { grid-template-columns: 1fr; }
+      .side-column { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .reminder { grid-column: 1 / -1; }
+    }
+    @media (max-width: 540px) {
+      .container { width: calc(100% - 30px); }
+      .nav { min-height: 62px; }
+      .brand { font-size: .88rem; }
+      .back-link { font-size: .8rem; }
+      .hero { padding: 62px 0 58px; }
+      .region-tag { margin: 9px 0 0; }
+      .content { padding: 42px 0 58px; }
+      .panel { padding: 21px; }
+      .side-column { grid-template-columns: 1fr; }
+      .info-row { grid-template-columns: 78px 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="container nav" aria-label="主要導覽">
+      <a class="brand" href="../index.html"><span class="brand-mark">青</span><span>湘南聖地巡禮</span></a>
+      <a class="back-link" href="../index.html">← 返回首頁</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow">SPOT GUIDE · FUJISAWA <span class="region-tag">藤澤站周邊</span></div>
+        <h1>藤澤市立圖書館<span>Fujisawa City Library ／ 藤沢市立図書館</span></h1>
+        <p class="hero-intro">以藤澤市立圖書館為巡禮主題，走訪《青春豬頭少年》故事所連結的藤澤市區場景。這裡也適合作為認識當地生活與街區氛圍的起點；實際入館與拍攝請遵守館方公告。</p>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="container layout">
+        <div class="main-column">
+          <article class="panel">
+            <h2>動畫場景對照</h2>
+            <div class="episode-box">
+              <div class="episode-number">第 1 集</div>
+              <div>
+                <strong>麻衣學姐兔女郎裝首次登場場景</strong>
+                <p>依本專案提供的景點資料，此處對應動畫第 1 集麻衣學姐身穿兔女郎裝首次登場的場景。實際場景構圖與取景位置，建議搭配動畫畫面再行比對；本頁不額外推定未提供的鏡頭細節。</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel">
+            <h2>交通指引</h2>
+            <div class="info-list">
+              <div class="info-row">
+                <div class="info-label">起點車站</div>
+                <div class="info-value">JR 藤澤站（藤沢駅）</div>
+              </div>
+              <div class="info-row">
+                <div class="info-label">出站方向</div>
+                <div class="info-value">北口</div>
+              </div>
+              <div class="info-row">
+                <div class="info-label">步行時間</div>
+                <div class="info-value">約 10 分鐘（依本專案提供資訊；實際時間依目的分館與步行路線而異）</div>
+              </div>
+            </div>
+            <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=藤沢市立図書館" target="_blank" rel="noopener noreferrer">在 Google Maps 查看位置 ↗</a>
+          </article>
+
+          <article class="panel">
+            <h2>經典拍照角度建議</h2>
+            <p>可先在館外公共通行空間取景，將圖書館入口或建築外觀作為畫面主體，拍攝前確認沒有妨礙出入口、行人與周邊設施。若希望重現動畫畫面，請先比對原作鏡頭與現場視角；館內是否允許拍攝，應以館方規定為準。</p>
+          </article>
+        </div>
+
+        <aside class="side-column">
+          <section class="side-card">
+            <div class="illustration" aria-hidden="true"><span class="illustration-icon">📚</span></div>
+            <div class="side-copy">
+              <h3>景點基本資料</h3>
+              <p>藤澤市立圖書館<br>Fujisawa City Library<br>分類：公共圖書館／藤澤站周邊</p>
+            </div>
+          </section>
+          <section class="side-card">
+            <div class="illustration" aria-hidden="true" style="background:linear-gradient(145deg,#d7f0f8,#eefaff)"><span class="illustration-icon">🚶</span></div>
+            <div class="side-copy">
+              <h3>步行前往</h3>
+              <p>從 JR 藤澤站北口出發，步行約 10 分鐘。請以地圖導航及現場指標確認路線。</p>
+            </div>
+          </section>
+          <div class="reminder">
+            <strong>巡禮與參訪提醒</strong>
+            館內是安靜閱讀場所，請降低音量、避免打擾讀者。拍照前先確認館方規定；請勿使用閃光燈，也不要拍攝其他民眾。
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>青春豬頭少年｜湘南聖地巡禮</span>
+      <a href="../index.html">← 返回首頁</a>
+    </div>
+  </footer>
+</body>
+</html>
