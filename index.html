@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0088CC">
+  <meta name="description" content="以《青春豬頭少年》為主題，整理湘南藤澤、江之島與七里濱一帶的聖地巡禮路線、景點與旅行提醒。">
+  <title>青春豬頭少年｜湘南聖地巡禮</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --sky: #0088CC;
+      --sky-dark: #006da6;
+      --sky-soft: #e8f6fc;
+      --ink: #183746;
+      --muted: #627985;
+      --sand: #fffaf0;
+      --white: #fff;
+      --line: #dcebf1;
+      --shadow: 0 14px 38px rgba(17, 86, 116, .10);
+      --radius: 22px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: #fbfeff;
+      font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
+      line-height: 1.75;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .container { width: min(1120px, calc(100% - 44px)); margin-inline: auto; }
+    .topbar {
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(255,255,255,.9);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(220,235,241,.8);
+    }
+    .nav { min-height: 70px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: .04em; }
+    .brand-mark {
+      width: 34px; height: 34px; display: grid; place-items: center;
+      color: white; background: var(--sky); border-radius: 50%;
+      box-shadow: 0 5px 14px rgba(0,136,204,.25);
+    }
+    .nav-links { display: flex; align-items: center; gap: 28px; color: var(--muted); font-size: .92rem; font-weight: 600; }
+    .nav-links a:hover { color: var(--sky); }
+    .nav-cta { padding: 9px 17px; color: white !important; background: var(--sky); border-radius: 999px; }
+    .hero {
+      position: relative; overflow: hidden; isolation: isolate;
+      min-height: 590px; display: flex; align-items: center;
+      background: linear-gradient(115deg, #dff5ff 0%, #effaff 46%, #fffaf0 100%);
+    }
+    .hero::before {
+      content: ""; position: absolute; z-index: -1; inset: auto -5% -110px -5%; height: 300px;
+      background: linear-gradient(180deg, rgba(113,204,232,.12), rgba(0,136,204,.18));
+      border-radius: 50% 50% 0 0 / 28% 28% 0 0;
+    }
+    .hero::after {
+      content: ""; position: absolute; z-index: -1; width: 520px; height: 520px;
+      right: -70px; top: -120px; border: 1px solid rgba(0,136,204,.15);
+      border-radius: 50%; box-shadow: 0 0 0 42px rgba(0,136,204,.035), 0 0 0 86px rgba(0,136,204,.025);
+    }
+    .hero-content { max-width: 700px; padding: 82px 0 110px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: var(--sky-dark); font-size: .82rem; font-weight: 800; letter-spacing: .16em; }
+    .eyebrow::before { content: ""; width: 27px; height: 2px; background: currentColor; }
+    h1 { margin: 18px 0 20px; font-size: clamp(2.35rem, 6vw, 4.65rem); line-height: 1.2; letter-spacing: -.055em; }
+    h1 span { display: block; color: var(--sky); }
+    .hero p { max-width: 600px; margin: 0; color: #4f6d7b; font-size: 1.06rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; padding: 13px 21px; border: 1px solid var(--sky); border-radius: 999px; font-weight: 700; transition: .2s ease; }
+    .btn-primary { color: white; background: var(--sky); box-shadow: 0 8px 20px rgba(0,136,204,.2); }
+    .btn-primary:hover { background: var(--sky-dark); transform: translateY(-2px); }
+    .btn-ghost { color: var(--sky-dark); background: rgba(255,255,255,.65); }
+    .btn-ghost:hover { background: white; transform: translateY(-2px); }
+    .hero-note { margin-top: 23px !important; font-size: .82rem !important; color: #78909b !important; }
+    .sun { position: absolute; right: 16%; top: 20%; width: 100px; aspect-ratio: 1; border-radius: 50%; background: #fff4c9; box-shadow: 0 0 0 18px rgba(255,244,201,.25); }
+    .wave-art { position: absolute; right: 4%; bottom: 20px; width: min(42vw, 470px); opacity: .55; }
+    .wave-art path { fill: none; stroke: #65bfdf; stroke-width: 2.5; stroke-linecap: round; }
+    .section { padding: 88px 0; }
+    .section-warm { background: var(--sand); }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 34px; }
+    .section-kicker { color: var(--sky); font-size: .78rem; font-weight: 800; letter-spacing: .16em; }
+    h2 { margin: 6px 0 0; font-size: clamp(1.7rem, 3.5vw, 2.45rem); letter-spacing: -.035em; line-height: 1.3; }
+    .section-desc { max-width: 460px; margin: 0; color: var(--muted); font-size: .94rem; }
+    .area-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .area-card {
+      position: relative; overflow: hidden; min-height: 245px; padding: 27px;
+      display: flex; flex-direction: column; justify-content: space-between;
+      background: white; border: 1px solid var(--line); border-radius: var(--radius);
+      box-shadow: 0 8px 24px rgba(17,86,116,.045); transition: .25s ease;
+    }
+    .area-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); border-color: #a9dcef; }
+    .area-card::after { content: ""; position: absolute; width: 170px; height: 170px; right: -48px; bottom: -65px; border: 1px solid rgba(0,136,204,.18); border-radius: 50%; box-shadow: 0 0 0 20px rgba(0,136,204,.035), 0 0 0 42px rgba(0,136,204,.025); }
+    .area-no { color: #8bbfd3; font-size: .8rem; font-weight: 800; letter-spacing: .12em; }
+    .area-icon { font-size: 1.8rem; }
+    .area-card h3 { margin: 10px 0 4px; font-size: 1.35rem; }
+    .area-card p { margin: 0; color: var(--muted); font-size: .9rem; }
+    .area-link { margin-top: 18px; color: var(--sky-dark); font-size: .88rem; font-weight: 800; }
+    .spot-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .spot-card { overflow: hidden; background: white; border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 9px 28px rgba(17,86,116,.06); transition: .25s ease; }
+    .spot-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+    .spot-visual { position: relative; height: 190px; overflow: hidden; display: grid; place-items: center; background: linear-gradient(135deg, #cceefa, #f4fbff); }
+    .spot-visual::before, .spot-visual::after { content: ""; position: absolute; border: 1px solid rgba(0,136,204,.22); border-radius: 50%; }
+    .spot-visual::before { width: 230px; height: 230px; }
+    .spot-visual::after { width: 310px; height: 310px; }
+    .spot-visual.library { background: linear-gradient(145deg, #e4f5fb, #fff8e9); }
+    .spot-visual.aquarium { background: linear-gradient(145deg, #9edcf0, #e7faff); }
+    .spot-visual.coast { background: linear-gradient(145deg, #d4f0f8, #fff4df); }
+    .visual-symbol { position: relative; z-index: 1; font-size: 3.6rem; filter: drop-shadow(0 8px 10px rgba(0,80,120,.12)); }
+    .spot-tag { position: absolute; z-index: 2; left: 17px; top: 16px; padding: 5px 11px; color: var(--sky-dark); background: rgba(255,255,255,.88); border-radius: 999px; font-size: .73rem; font-weight: 800; }
+    .spot-body { padding: 22px; }
+    .spot-body h3 { margin: 0 0 4px; font-size: 1.17rem; }
+    .jp-name { color: #7b929d; font-size: .8rem; }
+    .spot-body p { min-height: 52px; margin: 13px 0 18px; color: var(--muted); font-size: .88rem; }
+    .spot-meta { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 14px; border-top: 1px solid #edf3f5; color: #6a8794; font-size: .78rem; }
+    .spot-meta a { color: var(--sky-dark); font-weight: 800; white-space: nowrap; }
+    .route-panel { display: grid; grid-template-columns: 1fr 1.1fr; gap: 38px; align-items: center; padding: 34px; background: white; border: 1px solid var(--line); border-radius: 28px; box-shadow: var(--shadow); }
+    .route-panel h2 { margin-bottom: 14px; }
+    .route-panel p { color: var(--muted); font-size: .93rem; }
+    .route-steps { display: grid; gap: 13px; }
+    .route-step { display: flex; align-items: center; gap: 14px; padding: 13px 16px; background: #f5fbfe; border-radius: 14px; }
+    .step-dot { flex: 0 0 34px; width: 34px; height: 34px; display: grid; place-items: center; color: white; background: var(--sky); border-radius: 50%; font-size: .82rem; font-weight: 800; }
+    .route-step strong { display: block; font-size: .91rem; }
+    .route-step small { color: var(--muted); font-size: .77rem; }
+    .notice { margin-top: 22px; padding: 17px 19px; color: #5b7480; background: #f1f9fc; border-left: 3px solid var(--sky); border-radius: 0 12px 12px 0; font-size: .83rem; }
+    .footer { padding: 34px 0; color: #78909b; background: #f1f9fc; font-size: .82rem; }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; align-items: center; }
+    .footer strong { color: var(--ink); }
+    @media (max-width: 820px) {
+      .hero { min-height: 540px; }
+      .sun { right: 8%; top: 12%; width: 72px; }
+      .wave-art { right: -5%; width: 55vw; }
+      .area-grid, .spot-grid { grid-template-columns: repeat(2, 1fr); }
+      .route-panel { grid-template-columns: 1fr; gap: 20px; }
+      .section-head { align-items: start; flex-direction: column; }
+    }
+    @media (max-width: 560px) {
+      .container { width: min(100% - 30px, 1120px); }
+      .nav { min-height: 62px; }
+      .nav-links { gap: 13px; font-size: .78rem; }
+      .nav-links a:nth-child(2) { display: none; }
+      .brand { font-size: .9rem; }
+      .brand-mark { width: 30px; height: 30px; }
+      .hero { min-height: 570px; align-items: flex-start; }
+      .hero-content { padding: 76px 0 145px; }
+      .hero p { font-size: .96rem; }
+      .sun { top: auto; bottom: 120px; right: 14%; width: 55px; }
+      .wave-art { width: 85vw; right: -10%; bottom: 5px; }
+      .section { padding: 65px 0; }
+      .area-grid, .spot-grid { grid-template-columns: 1fr; }
+      .area-card { min-height: 205px; }
+      .spot-visual { height: 175px; }
+      .route-panel { padding: 23px 18px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <nav class="container nav" aria-label="主要導覽">
+      <a class="brand" href="#top"><span class="brand-mark">青</span><span>湘南聖地巡禮</span></a>
+      <div class="nav-links">
+        <a href="#areas">巡禮區域</a>
+        <a href="#spots">精選景點</a>
+        <a href="#route">行程概覽</a>
+        <a class="nav-cta" href="#spots">開始探索 ↗</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="sun" aria-hidden="true"></div>
+      <div class="container">
+        <div class="hero-content">
+          <div class="eyebrow">SEISHUN BUTA YARŌ · SHŌNAN</div>
+          <h1>青春豬頭少年<span>湘南聖地巡禮</span></h1>
+          <p>沿著海風與江之電，走進《青春豬頭少年》故事裡熟悉的湘南風景。從藤澤街區、江之島海岸，到七里濱的海天交界，整理值得造訪的場景與旅行資訊，讓動畫中的日常成為自己的旅程。</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#areas">探索巡禮區域 <span aria-hidden="true">→</span></a>
+            <a class="btn btn-ghost" href="#spots">瀏覽精選景點</a>
+          </div>
+          <p class="hero-note">以真實地點為導覽核心；動畫集數與具體場景對照將於資料核實後逐項補充。</p>
+        </div>
+      </div>
+      <svg class="wave-art" viewBox="0 0 480 130" aria-hidden="true">
+        <path d="M0 65 C55 20 95 20 150 65 S245 110 300 65 S405 20 480 65"/>
+        <path d="M0 90 C55 45 95 45 150 90 S245 135 300 90 S405 45 480 90"/>
+        <path d="M0 40 C55 -5 95 -5 150 40 S245 85 300 40 S405 -5 480 40"/>
+      </svg>
+    </section>
+
+    <section class="section section-warm" id="areas">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="section-kicker">EXPLORE SHŌNAN</div><h2>從三個區域，展開湘南散步</h2></div>
+          <p class="section-desc">依地理位置整理巡禮範圍。可依照交通方式與當日時間安排路線，不必一次走完所有區域。</p>
+        </div>
+        <div class="area-grid">
+          <a class="area-card" href="#spots">
+            <div><div class="area-no">AREA 01 · CITY</div><div class="area-icon" aria-hidden="true">🚉</div><h3>藤澤站周邊</h3><p>以藤澤站為交通起點，探索市區街景與生活感十足的湘南日常。</p></div>
+            <span class="area-link">查看相關景點　↗</span>
+          </a>
+          <a class="area-card" href="#spots">
+            <div><div class="area-no">AREA 02 · ISLAND</div><div class="area-icon" aria-hidden="true">⛩️</div><h3>江之島區</h3><p>海岸、島嶼與水族館交織的散步區域，適合安排半日行程。</p></div>
+            <span class="area-link">查看相關景點　↗</span>
+          </a>
+          <a class="area-card" href="spots/shichirigahama-beach.html">
+            <div><div class="area-no">AREA 03 · COAST</div><div class="area-icon" aria-hidden="true">🌊</div><h3>七里濱海岸區</h3><p>沿著海岸感受湘南風景，欣賞海面、鐵道與遠方的稜線。</p></div>
+            <span class="area-link">查看相關景點　↗</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="spots">
+      <div class="container">
+        <div class="section-head">
+          <div><div class="section-kicker">SELECTED SPOTS</div><h2>精選巡禮景點</h2></div>
+          <p class="section-desc">先從三個代表性地點認識湘南。景點名稱以便於辨識的地點名稱呈現，並非全部都是官方命名的觀光景點。</p>
+        </div>
+        <div class="spot-grid">
+          <article class="spot-card">
+            <div class="spot-visual library"><span class="spot-tag">藤澤站周邊</span><span class="visual-symbol" aria-hidden="true">📚</span></div>
+            <div class="spot-body">
+              <h3>藤澤市立圖書館</h3>
+              <div class="jp-name">藤沢市立図書館</div>
+              <p>以藤澤市的公共圖書館設施作為市區文化散步的參考點。造訪前請確認實際分館、開館時間與入館規定。</p>
+              <div class="spot-meta"><span>市區文化設施</span><a href="spots/fujisawa-library.html" target="_blank" rel="noopener noreferrer">地圖位置 ↗</a></div>
+            </div>
+          </article>
+          <article class="spot-card">
+            <div class="spot-visual aquarium"><span class="spot-tag">江之島區</span><span class="visual-symbol" aria-hidden="true">🐬</span></div>
+            <div class="spot-body">
+              <h3>新江之島水族館</h3>
+              <div class="jp-name">新江ノ島水族館</div>
+              <p>位於片瀨海岸的海洋展示設施，可與江之島周邊海岸散步一同規劃。出發前建議查看官方營業資訊。</p>
+              <div class="spot-meta"><span>海洋展示・親子景點</span><a href="spots/enoshima-aquarium.html" target="_blank" rel="noopener noreferrer">地圖位置 ↗</a></div>
+            </div>
+          </article>
+          <article class="spot-card">
+            <div class="spot-visual coast"><span class="spot-tag">七里濱海岸區</span><span class="visual-symbol" aria-hidden="true">🚃</span></div>
+            <div class="spot-body">
+              <h3>七里濱海岸・車站周邊小路</h3>
+              <div class="jp-name">七里ヶ浜海岸・七里ヶ浜駅周辺</div>
+              <p>以七里濱站與鄰近海岸一帶作為散步範圍。此處為區域性描述，請以現場道路與行人動線為準。</p>
+              <div class="spot-meta"><span>海岸・鐵道風景</span><a href="spots/shichirigahama-beach.html" target="_blank" rel="noopener noreferrer">地圖位置 ↗</a></div>
+            </div>
+          </article>
+        </div>
+        <div class="notice">巡禮提醒：本首頁目前是區域與景點導覽預覽，不將未核實的動畫集數、角色出現位置或拍攝角度寫成確定資訊。後續景點子頁應逐項補上可靠的動畫場景對照、交通步行資訊與拍攝提醒。</div>
+      </div>
+    </section>
+
+    <section class="section section-warm" id="route">
+      <div class="container">
+        <div class="route-panel">
+          <div>
+            <div class="section-kicker">A WALK THROUGH SHŌNAN</div>
+            <h2>把海岸線，排進你的旅行日常。</h2>
+            <p>藤澤、江之島與七里濱可透過鐵道及步行串連。建議先確認各設施當日開放狀況，再依興趣調整停留時間；若要拍攝鐵道或住宅周邊，請留在安全且允許通行的位置。</p>
+            <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=藤沢駅" target="_blank" rel="noopener noreferrer">查看藤澤站地圖 ↗</a>
+          </div>
+          <div class="route-steps" aria-label="區域探索順序建議">
+            <div class="route-step"><span class="step-dot">01</span><div><strong>藤澤站周邊</strong><small>從主要交通節點開始探索市區</small></div></div>
+            <div class="route-step"><span class="step-dot">02</span><div><strong>江之島・片瀨海岸</strong><small>安排水族館與海岸周邊散步</small></div></div>
+            <div class="route-step"><span class="step-dot">03</span><div><strong>七里濱海岸</strong><small>沿海欣賞湘南風景，留意列車通行</small></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div><strong>青春豬頭少年｜湘南聖地巡禮</strong><br>以尊重在地生活為前提，慢慢走訪故事與海岸。</div>
+      <div>非官方粉絲導覽企劃・資訊請以各設施公告為準</div>
+    </div>
+  </footer>
+</body>
+</html>
